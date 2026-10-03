@@ -1,4 +1,4 @@
-# Hugo for Zed
+# Hugo Syntax Highlighter for Zed 
 
 Highlighting for Hugo templates: Go template syntax with HTML injected around it.
 Function lists and snippets are derived from

@@ -1,0 +1,233 @@
+{
+  "Curlies": {
+    "prefix": "x",
+    "body": [
+      "{{ $1 }}"
+    ],
+    "description": "Wrap in Go Template's double curly brackets",
+    "scope": "hugo"
+  },
+  "Date": {
+    "prefix": "date",
+    "body": "$CURRENT_YEAR-$CURRENT_MONTH-${CURRENT_DATE}T$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+    "description": "Write current date in the format accepted by Hugo",
+    "scope": "hugo"
+  },
+  "Dot": {
+    "prefix": "xx",
+    "body": [
+      "{{ . }}"
+    ],
+    "description": "Dot",
+    "scope": "hugo"
+  },
+  "Return": {
+    "prefix": "ret",
+    "body": [
+      "{{ return $0 }}"
+    ],
+    "description": "return statement",
+    "scope": "hugo"
+  },
+  "If": {
+    "prefix": "if",
+    "body": [
+      "{{ if $1 }}",
+      "\t$0",
+      "{{ end }}"
+    ],
+    "description": "If",
+    "scope": "hugo"
+  },
+  "If inline": {
+    "prefix": "ifi",
+    "body": "{{ if $1 }} $0 {{ end }}",
+    "description": "If inline",
+    "scope": "hugo"
+  },
+  "If/Else": {
+    "prefix": "ife",
+    "body": [
+      "{{ if $1 }}",
+      "\t$0",
+      "{{ else }}",
+      "\t",
+      "{{ end }}"
+    ],
+    "description": "If/Else",
+    "scope": "hugo"
+  },
+  "If/Else If": {
+    "prefix": "ifei",
+    "body": [
+      "{{ if $1 }}",
+      "\t$0",
+      "{{ else if $2 }}",
+      "\t",
+      "{{ end }}"
+    ],
+    "description": "If/Else If",
+    "scope": "hugo"
+  },
+  "With": {
+    "prefix": "with",
+    "body": [
+      "{{ with $1 }}",
+      "\t$0",
+      "{{ end }}"
+    ],
+    "description": "Alternative to if statements, rebinds the context (.) within its scope and skips the block if the variable is absent.",
+    "scope": "hugo"
+  },
+  "With Else": {
+    "prefix": "withe",
+    "body": [
+      "{{ with $1 }}",
+      "\t$0",
+      "{{ else }}",
+      "\t",
+      "{{ end }}"
+    ],
+    "description": "With Else",
+    "scope": "hugo"
+  },
+  "Range": {
+    "prefix": "range",
+    "body": [
+      "{{ range $1 }}",
+      "\t$0",
+      "{{ end }}"
+    ],
+    "description": "Opens a range",
+    "scope": "hugo"
+  },
+  "Scratch": {
+    "prefix": "scra",
+    "body": [
+      "{{ ${1:.Scratch}.${2|Set,Get,Add,SetInMap,Delete,GetSortedMapValues|} $3 }}"
+    ],
+    "description": "Scratch method, either as .Scratch or any other",
+    "scope": "hugo"
+  },
+  "Partial": {
+    "prefix": "partial",
+    "body": [
+      "{{ partial \"$1\" ${2:.} }}"
+    ],
+    "description": "Partial",
+    "scope": "hugo"
+  },
+  "PartialCached": {
+    "prefix": "partialc",
+    "body": [
+      "{{ partialCached \"$1\" ${2:.} ${0:$variant} }}"
+    ],
+    "description": "Partial cached with a variant",
+    "scope": "hugo"
+  },
+  "Partial without curlies": {
+    "prefix": "xpartial",
+    "body": [
+      "partial \"$1\" ${2:.}"
+    ],
+    "description": "Partial when stored in a variable does not need curlies",
+    "scope": "hugo"
+  },
+  "Template": {
+    "prefix": "template",
+    "body": [
+      "{{ template \"$1\" ${2:.} }}"
+    ],
+    "description": "Template",
+    "scope": "hugo"
+  },
+  "Block": {
+    "prefix": "block",
+    "body": [
+      "{{ block \"${1:main}\" ${2:.} }}",
+      "\t$3",
+      "{{ end }}"
+    ],
+    "description": "Block",
+    "scope": "hugo"
+  },
+  "Block define": {
+    "prefix": "define",
+    "body": [
+      "{{ define \"${1:main}\" }}",
+      "\t$2",
+      "{{ end }}"
+    ],
+    "description": "Block define",
+    "scope": "hugo"
+  },
+  "Comment": {
+    "prefix": "comm",
+    "body": [
+      "{{/* $1 */}}"
+    ],
+    "description": "Comment",
+    "scope": "hugo"
+  },
+  "Variable": {
+    "prefix": "vars",
+    "body": [
+      "{{ \\$${1:var} ${2::=} $0 }}"
+    ],
+    "description": "Variable",
+    "scope": "hugo"
+  },
+  "PrintF": {
+    "prefix": "print",
+    "body": [
+      "printf \"${1|%s,%v,%d,%x|}\" ${2:.}"
+    ],
+    "description": "Print a value",
+    "descriptionMoreURL": "https://golang.org/pkg/fmt/#hdr-Printing",
+    "scope": "hugo"
+  },
+  "String": {
+    "prefix": "string",
+    "body": [
+      "{{ printf \"${1:Something about} %s\" $2 }}"
+    ],
+    "description": "Print a string",
+    "scope": "hugo"
+  },
+  "Debug": {
+    "prefix": "debug",
+    "body": [
+      "{{ printf \"%#v\" $1 }}"
+    ],
+    "description": "Debug",
+    "scope": "hugo"
+  },
+  "Error": {
+    "prefix": "error",
+    "body": [
+      "{{ errorf \"%#v\" $1 }}"
+    ],
+    "description": "Error",
+    "scope": "hugo"
+  },
+  "CommentBlock": {
+    "prefix": "commblock",
+    "body": [
+      "{{/*",
+      "\t${1:Description}",
+      "",
+      "\t@author ${2}",
+      "",
+      "\t@context ${3:Type (.name)}",
+      "",
+      "\t@access ${4|public,private|}",
+      "",
+      "\t@example - Go Template",
+      "\t\t{{ partial \"path\" $context }}",
+      "\t\t{{ partialCached \"path\" $context \"variant\" }}",
+      "*/}}"
+    ],
+    "description": "Comment block. You should use them.",
+    "scope": "hugo"
+  }
+}

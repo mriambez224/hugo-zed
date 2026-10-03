@@ -1,0 +1,13 @@
+id = "hugo"
+name = "Hugo Syntax"
+version = "0.0.1"
+schema_version = 1
+authors = ["Claude AI <noreply@anthropic.com>"]
+description = "Hugo template highlighting (HTML + Go template) for ZED, inspired by language-hugo-vscode."
+repository = "https://github.com/YOUR_USER/zed-hugo"
+snippets = "snippets/hugo.json"
+
+[grammars.gotmpl]
+repository = "https://github.com/ngalaiko/tree-sitter-go-template"
+# Replace with a real commit SHA from that repo (git ls-remote <repo> HEAD)
+rev = "06b2fd2ac32a7be71cdcf925eeeb868a68e2acde"

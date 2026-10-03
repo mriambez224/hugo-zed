@@ -1,0 +1,13 @@
+name = "Hugo"
+grammar = "gotmpl"
+# ".html" is deliberately not listed: it belongs to Zed's built-in HTML language.
+# Map layouts to Hugo with "file_types" in settings.json (see README).
+path_suffixes = ["gotmpl"]
+block_comment = ["{{/* ", " */}}"]
+brackets = [
+    { start = "{{", end = "}}", close = true, newline = false },
+    { start = "[", end = "]", close = true, newline = false },
+    { start = "(", end = ")", close = true, newline = false },
+    { start = "\"", end = "\"", close = true, newline = false, not_in = ["string"] },
+    { start = "'", end = "'", close = true, newline = false, not_in = ["string"] },
+]

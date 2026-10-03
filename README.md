@@ -7,7 +7,7 @@ Function lists and snippets are derived from
 ## Setup
 
 1. In `extension.toml`, set `rev` to a real commit SHA of tree-sitter-go-template.
-2. Install Rust (rustup), then in Zed: Extensions -> Install Dev Extension -> pick this folder.
+2. In Zed: Extensions -> Install Dev Extension -> pick this folder.
 3. Map your layouts to the language in Zed `settings.json`:
 
 ```json

@@ -4,7 +4,7 @@ version = "0.0.1"
 schema_version = 1
 authors = ["Claude AI <noreply@anthropic.com>"]
 description = "Hugo template highlighting (HTML + Go template) for ZED, inspired by language-hugo-vscode."
-repository = "https://github.com/YOUR_USER/zed-hugo"
+repository = "https://github.com/mriambez224/hugo-zed"
 snippets = "snippets/hugo.json"
 
 [grammars.gotmpl]

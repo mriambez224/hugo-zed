@@ -1,4 +1,4 @@
 ; Everything outside {{ }} is HTML.
 ((text) @injection.content
     (#set! injection.language "html")
-    (#set! injection.combine))
+    (#set! injection.combined))

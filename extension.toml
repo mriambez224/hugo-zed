@@ -1,5 +1,5 @@
 id = "hugo"
-name = "Hugo Syntax"
+name = "Hugo Syntax Highlighter"
 version = "0.0.1"
 schema_version = 1
 authors = ["Claude AI <noreply@anthropic.com>"]
